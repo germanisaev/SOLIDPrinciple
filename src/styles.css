@@ -1,0 +1,56 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ngx-bootstrap/datepicker/bs-datepicker.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.jumbotron {
+    padding: 2rem 1.5rem;
+}
+
+.today {
+    background-color: #eee;
+
+}
+
+bs-datepicker-container[role="dialog"] ~ .right-inner-addon ~ i {
+    color: #337ab7 !important;
+}
+
+
+.bs-datepicker-head button.previous span,
+.bs-datepicker-head button.next span {
+    line-height: .8;
+}
+
+.bs-datepicker-head button[disabled], .bs-datepicker-head button[disabled]:hover, .bs-datepicker-head button[disabled]:active {
+    /*background: transparent*/
+}
+
+.form-control:focus ~ i {
+    color: #337ab7 !important;
+}
+
+.right-inner-addon i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    pointer-events: none;
+    font-size: 1.2rem;
+}
+.right-inner-addon {
+    position: relative;
+}
+body .bs-datepicker-container, .bs-datepicker {
+    padding: 0;
+    border-radius: 3px 3px 3px 3px;
+}
+
+body .bs-datepicker-container .bs-datepicker-head {
+  background-color: transparent;
+}
+body .bs-datepicker-container .bs-datepicker-head * {
+  color: #337ab7;
+}
+
+

@@ -1,0 +1,69 @@
+<div class="container">
+    <!--
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron" style="background-color: #eee; height: calc(95vh);">
+                <h1>Angular Bootstrap Demo</h1>
+                <p class="lead">
+                    This demo shows how to integrate Bootstrap 4 with Angular 9
+                </p>
+                <a class="btn btn-lg btn-primary" href="" role="button">View tutorial</a>
+            </div>
+        </div>
+    </div>
+    -->
+    <div class="row">
+        <div class="col-md-3">
+            <form [formGroup]="form" novalidate>
+                <div class="form-group">
+                    <label for="dateOfBirth">Date Of Birth</label>
+                    <div class="right-inner-addon">
+                        <input type="text" id="dateOfBirth" name="dateOfBirth" autocomplete="off" bsDatepicker
+                            readonly="true" #dp="bsDatepicker" [bsConfig]="datePickerConfig"
+                            formControlName="dateOfBirth" class="form-control" [minDate]="minDate" [maxDate]="maxDate">
+                        <!--[bsValue]="bsValue"-->
+                        <i class="fa fa-calendar" (click)="dp.toggle()" [attr.aria-expanded]="dp.isOpen"></i>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2">
+            <label for="ChangeLang">Change Language</label>
+<!--        
+            <div class="right-inner-addon">
+                <input list="languages" id="ChangeLang" class="form-control" (change)="onChangeLang($event)">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                &nbsp;
+                <i class="fa fa-globe" aria-hidden="true"></i>
+              
+            </div>-->
+            <select id="ChangeLang" class="form-control" (change)="onChangeLang($event)">
+                <option [value]="lng.key" *ngFor="let lng of languages; let i=index">{{lng.value}}</option>
+            </select>
+            <!--
+            <datalist id="languages">
+                <option *ngFor="let loc of locales" [value]="loc">{{ loc }}</option>
+            </datalist>
+            -->
+            <!--
+            <select class="custom-select form-control " [(ngModel)]="locale" (ngModelChange)="applyLocale(dp);">
+                <option *ngFor="let loc of locales" [value]="loc">{{ loc }}</option>
+            </select>
+            -->
+            <!--
+            <select id="ChangeLang" class="form-control" (change)="onChangeLang($event)">
+                <option [value]="lng" *ngFor="let lng of languages; let i=index">{{lng}}</option>
+            </select>
+            -->
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--
+    [(ngModel)]="dateOfBirth"
+
+-->
+<router-outlet></router-outlet>
